@@ -7,7 +7,7 @@ builderImages:
 
 buildEnvs:
   - name: BP_DOTNET_PROJECT_PATH
-    value: function.csproj
+    value: Function.csproj
   - name: BP_DOTNET_FRAMEWORK_VERSION
     value: "6.0.x"
   - name: BP_DOTNET_SDK_VERSION
