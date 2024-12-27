@@ -1,0 +1,16 @@
+name: csharp-extensions
+runtimes:
+  - path: csharp
+    name: csharp
+    templates:
+      - path: cloudevents
+        name: cloudevents
+      - path: http
+        name: http
+
+builderImages:
+  pack: mcr.microsoft.com/dotnet/sdk:6.0
+
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
