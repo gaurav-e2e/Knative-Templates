@@ -1,7 +1,7 @@
 name: http
 description: A C# HTTP function template for Knative
 runtime: dotnet
-version: "8.0"
+version: "7.0"
 builderImages:
   pack: gcr.io/paketo-buildpacks/builder:base
 
