@@ -1,10 +1,7 @@
 name: http
-language: csharp
-build:
-  builder: pack
-  buildEnvs:
-    - name: BP_DOTNET_PROJECT_PATH
-      value: Function.csproj
-healthEndpoints:
-  liveness: /health/liveness
-  readiness: /health/readiness
+description: A C# HTTP function template for Knative
+runtime: dotnet
+version: "8.0"
+builderImages:
+  pack: gcr.io/paketo-buildpacks/builder:base
+

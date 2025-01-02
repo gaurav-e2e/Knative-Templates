@@ -1,16 +1,18 @@
-using Function;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using function;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services
+Handler.MapServices(builder.Services);
+
 var app = builder.Build();
 
-var function = new Function.Function();
+// Map endpoints
+Handler.MapEndpoints(app);
 
-// Map the main function endpoint
-app.MapPost("/", async (HttpRequest request) => await Task.FromResult(function.Handle(request)));
-app.MapGet("/", async (HttpRequest request) => await Task.FromResult(function.Handle(request)));
+// Start the app
+app.Run();
 
-// Health check endpoints
-app.MapGet("/health/liveness", () => Results.Ok());
-app.MapGet("/health/readiness", () => Results.Ok());
-
-app.Run("http://0.0.0.0:8080");
