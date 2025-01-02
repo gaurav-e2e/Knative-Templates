@@ -1,16 +1,15 @@
-name: csharp
+name: csharp-pack
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
+builderImages:
+  pack: gcr.io/paketo-buildpacks/builder:base
+buildpacks:
+  - paketo-buildpacks/dotnet-core
 runtimes:
   - path: csharp
     name: csharp
     templates:
-      - path: cloudevents
-        name: cloudevents
+      - path: cloudevent
       - path: http
-        name: http
 
-builderImages:
-  pack: mcr.microsoft.com/dotnet/sdk:6.0
-
-healthEndpoints:
-  liveness: /health/liveness
-  readiness: /health/readiness

@@ -1,10 +1,3 @@
 name: http
-language: csharp
-build:
-  builder: pack
-  buildEnvs:
-    - name: BP_DOTNET_PROJECT_PATH
-      value: Function.csproj
-healthEndpoints:
-  liveness: /health/liveness
-  readiness: /health/readiness
+description: A C# http function template
+
