@@ -10,6 +10,5 @@ runtimes:
   - path: csharp
     name: csharp
     templates:
-      - path: cloudevent
       - path: http
 
