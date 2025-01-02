@@ -1,0 +1,4 @@
+# Used by buildback builders, buildEnvs are passed to the build image
+buildEnvs:
+- name: BP_NODE_RUN_SCRIPTS
+  value: build
